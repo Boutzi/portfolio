@@ -38,7 +38,7 @@
   "status": {
     "activity": "アクティビティ",
     "LiveStatus": "ライブステータス",
-    "StarredRepositories": "スター付きGitHubリポジトリ",
+    "StarredRepositories": "最新の更新されたGitHubリポジトリ",
     "LastestJobs": "最新のコース、仕事、プロジェクト"
   },
   "skills": "スキル",

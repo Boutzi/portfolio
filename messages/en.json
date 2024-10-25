@@ -39,7 +39,7 @@
   "status": {
     "activity": "Activity",
     "LiveStatus": "Live Status",
-    "StarredRepositories": "Starred Github repositories",
+    "StarredRepositories": "Latest recently updated GitHub repositories",
     "LastestJobs": "Latest course, job & project"
   },
   "skills": "Skills",
