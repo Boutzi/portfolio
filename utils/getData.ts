@@ -1,9 +1,26 @@
 import { GithubUserResponse } from "@/types/user.types";
 
-export const getRepositories = async () => {
-  return fetch(`https://api.github.com/users/Boutzi/starred`)
+interface Repository {
+  name: string;
+  html_url: string;
+  description: string;
+  language: string;
+  updated_at: string;
+  [key: string]: string;
+}
+
+export const getRepositories = async (): Promise<Repository[]> => {
+  return fetch(`https://api.github.com/users/Boutzi/repos`)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data: Repository[]) =>
+      data
+        .filter((repo) => repo.name !== "boutzi")
+        .sort(
+          (a, b) =>
+            new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
+        )
+        .slice(0, 4)
+    );
 };
 
 export const fetchGithubUserData = async (): Promise<GithubUserResponse> => {

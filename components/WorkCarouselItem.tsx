@@ -60,11 +60,11 @@ export const WorkCarouselItem = (props: CarouselItem) => {
               className="w-full h-auto object-cover"
             />
             <div
-              className={`absolute inset-0 flex items-center justify-center bg-transparent group-hover:bg-foreground/80 ${
+              className={`absolute inset-0 flex items-center justify-center bg-transparent group-hover:bg-foreground/80 max-md:group-hover:bg-none ${
                 props.language === "sm" ? "hidden" : ""
               }`}
             >
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity rounded-full text-foreground/60 hover:bg-none hover:text-foreground">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity rounded-full text-foreground/60 hover:bg-none hover:text-foreground max-md:hidden">
                 {props.language === "Python" ? (
                   <PythonIcon className="h-16 w-16" />
                 ) : props.language === "JavaScript" ? (

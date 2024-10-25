@@ -39,7 +39,7 @@
   "status": {
     "activity": "활동",
     "LiveStatus": "실시간 상태",
-    "StarredRepositories": "즐겨찾기 GitHub 저장소",
+    "StarredRepositories": "최근에 업데이트된 최신 GitHub 저장소",
     "LastestJobs": "최신 과정, 직업 및 프로젝트"
   },
   "skills": "기술",

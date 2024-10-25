@@ -38,7 +38,7 @@
   "status": {
     "activity": "Activités",
     "LiveStatus": "Statut en direct",
-    "StarredRepositories": "Dépôts GitHub favoris",
+    "StarredRepositories": "Derniers dépôts GitHub récemment mis à jour",
     "LastestJobs": "Dernier diplôme, emploi et projet"
   },
   "skills": "Compétences",
