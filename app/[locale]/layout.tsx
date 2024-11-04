@@ -1,19 +1,22 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
 import { Anek_Telugu } from "next/font/google";
 import "../globals.css";
+
+import { ThemeProvider } from "@/components/theme-provider";
+import { GlobalStatus } from "@/components/GlobalStatus";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { GlobalStatus } from "@/components/GlobalStatus";
-import { StatusProvider } from "@/context/StatusContext";
-import { UserProvider } from "@/context/UserContext";
+import GoogleTagManager from "@/components/GoogleTagManager";
+
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { unstable_setRequestLocale } from "next-intl/server";
+
+import { StatusProvider } from "@/context/StatusContext";
+import { UserProvider } from "@/context/UserContext";
 import { ColorProvider } from "@/context/ColorContext";
 import { LoaderProvider } from "@/context/LoaderContext";
-import GoogleTagManager from "@/components/GoogleTagManager";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -25,14 +28,14 @@ const AnekTelugu = Anek_Telugu({
 });
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
   style: "normal",
 });
 
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
