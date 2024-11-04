@@ -4,22 +4,22 @@ on:
   push:
     branches: ["dev"]
 
-  workflow_dispatch:
+  workflow_dispatch: # Permet de déclencher manuellement le workflow via l'interface GitHub
 
 permissions:
   contents: read
 
 concurrency:
-  group: "pages"
+  group: "pages" # Groupe de concurrence pour éviter des exécutions multiples en même temps
   cancel-in-progress: false
 
 jobs:
   security-and-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Exécute le workflow sur la dernière version d'Ubuntu
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Récupère le code source du dépôt
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,11 +35,11 @@ jobs:
       - name: Depencies audit
         run: npm audit --audit-level=moderate
 
-      #- name: Run Unit Tests
-      #  run: npx jest --coverage
+      # - name: Run Unit Tests
+      #   run: npx jest --coverage  # (commenté) Exécute les tests unitaires avec Jest et génère un rapport de couverture
 
       - name: Build application
-        run: npm run build
+        run: npm run build # Compile l'application
         env:
           NEXT_PUBLIC_GITHUB_BEARER_TOKEN: ${{ secrets.NEXT_PUBLIC_GITHUB_BEARER_TOKEN }}
           NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
