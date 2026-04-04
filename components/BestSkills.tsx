@@ -4,7 +4,7 @@ import { Section } from "./Section";
 import { ScrollAnimation } from "./ScrollAnimation";
 import { useTranslations } from "next-intl";
 import { PythonIcon } from "./icons/PythonIcon";
-import { AwsIcon } from "./icons/awsIcon";
+import { AwsIcon } from "./icons/AwsIcon";
 import { JupyterIcon } from "./icons/JupyterIcon";
 
 export const BestSkills = () => {
