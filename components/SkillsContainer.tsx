@@ -1,15 +1,11 @@
 "use client";
 import { ReactNode, useEffect, useState } from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+// import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { X } from "lucide-react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Badge } from "@/components/ui/badge";
 import { fetchDataFromBucket } from "@/utils/getBucket";
 import { useLocale, useTranslations } from "next-intl";
@@ -18,7 +14,7 @@ import Loading from "@/app/[locale]/about/(me)/skills/loading";
 interface Skill {
   name: string;
   icon: JSX.Element | ReactNode;
-  proficiency: number;
+  // proficiency: number;
   categories: string[];
   description: string;
 }
@@ -46,9 +42,7 @@ export default function SkillsContainer() {
 
   const toggleCategory = (category: string) => {
     setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category]
+      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]
     );
   };
 
@@ -56,9 +50,7 @@ export default function SkillsContainer() {
     const fetchData = async () => {
       try {
         const data = await fetchDataFromBucket(locale, "skills", "skills");
-        data.sort((a: { name: string }, b: { name: string }) =>
-          a.name.localeCompare(b.name)
-        );
+        data.sort((a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name));
         setSkills(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -72,11 +64,7 @@ export default function SkillsContainer() {
   const filteredSkills =
     selectedCategories.length === 0
       ? skills
-      : skills.filter((skill) =>
-          selectedCategories.some((category) =>
-            skill.categories.includes(category)
-          )
-        );
+      : skills.filter((skill) => selectedCategories.some((category) => skill.categories.includes(category)));
 
   const resetFilters = () => {
     setSelectedCategories([]);
@@ -94,9 +82,7 @@ export default function SkillsContainer() {
         {categories.map((category, index) => (
           <Button
             key={index}
-            variant={
-              selectedCategories.includes(category) ? "default" : "outline"
-            }
+            variant={selectedCategories.includes(category) ? "default" : "outline"}
             onClick={() => toggleCategory(category)}
             className="capitalize"
           >
@@ -137,12 +123,10 @@ export default function SkillsContainer() {
                       {skill.name}
                     </div>
                   </CardTitle>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <Progress value={skill.proficiency} className="w-full" />
-                    <span className="text-sm font-medium">
-                      {skill.proficiency}%
-                    </span>
-                  </div>
+                    <span className="text-sm font-medium">{skill.proficiency}%</span>
+                  </div> */}
                 </CardHeader>
               </Card>
             </HoverCardTrigger>
@@ -162,11 +146,7 @@ export default function SkillsContainer() {
                   <p className="text-sm">{skill.description}</p>
                   <div className="flex gap-2 flex-wrap items-center pt-2">
                     {skill.categories.map((category) => (
-                      <Badge
-                        key={category}
-                        variant="outline"
-                        className="capitalize text-xs"
-                      >
+                      <Badge key={category} variant="outline" className="capitalize text-xs">
                         {category}
                       </Badge>
                     ))}

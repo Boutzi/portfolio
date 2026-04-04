@@ -1,18 +1,11 @@
 "use client";
-import * as React from "react";
 import { FranceIcon } from "./icons/FranceIcon";
 import { UnitedKingdomIcon } from "./icons/UnitedKingdomIcon";
 import { ItalyIcon } from "./icons/ItalyIcon";
 import { KoreaIcon } from "./icons/KoreaIcon";
 import { JapanIcon } from "./icons/JapanIcon";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Link } from "@/i18n/routing";
@@ -35,6 +28,7 @@ const languages: Record<Language, LanguageInfo> = {
 const LangSwitcher: React.FC = () => {
   const locale = useLocale() as Language;
   const router = useRouter();
+  const activatedLanguages: string[] = ["en", "fr"];
 
   const handleLocaleChange = (newLocale: Language) => {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/`;
@@ -49,18 +43,16 @@ const LangSwitcher: React.FC = () => {
         </SelectValue>
       </SelectTrigger>
       <SelectContent>
-        {Object.entries(languages).map(([code, { name, Icon }]) => (
-          <SelectItem key={code} value={code as Language}>
-            <Link
-              href="/"
-              locale={code as Language}
-              className="flex items-center"
-            >
-              <Icon className="mr-2 h-5 w-5 rounded-full" />
-              <span>{name}</span>
-            </Link>
-          </SelectItem>
-        ))}
+        {Object.entries(languages)
+          .filter(([code]) => activatedLanguages.includes(code))
+          .map(([code, { name, Icon }]) => (
+            <SelectItem key={code} value={code as Language}>
+              <Link href="/" locale={code as Language} className="flex items-center">
+                <Icon className="mr-2 h-5 w-5 rounded-full" />
+                <span>{name}</span>
+              </Link>
+            </SelectItem>
+          ))}
       </SelectContent>
     </Select>
   );

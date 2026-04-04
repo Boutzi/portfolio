@@ -1,87 +1,86 @@
 {
   "Metadata": {
     "layout": {
-      "root": "Software Engineer in Bordeaux",
-      "rootDescription": "A graphic designer who got lost in the void, in the emptiness of code.",
-      "about": "About Me",
-      "aboutDescription": "Learn more about me and my background.",
-      "work": "Work",
-      "workDescription": "My work in web and software development.",
+      "root": "Data Engineer in France",
+      "rootDescription": "A creative code enthusiast, transforming ideas into captivating digital experiences.",
+      "about": "About me",
+      "aboutDescription": "Discover my background, my passions, and what inspires me.",
+      "work": "Projects",
+      "workDescription": "Explore my projects in data, web development, and software.",
       "contact": "Contact me",
-      "contactDescription": "Contact layout",
-      "education": "Education",
-      "educationDescription": "Uncover my academic background and the knowledge I've gained.",
-      "experience": "Experience",
-      "experienceDescription": "Discover my professional experiences and the projects I've contributed to.",
+      "contactDescription": "Let's get in touch to discuss new opportunities.",
+      "education": "My academic background",
+      "educationDescription": "Dive into my university journey and the skills I have acquired.",
+      "experience": "Professional experiences",
+      "experienceDescription": "Discover my past experiences and the projects that have shaped my career.",
       "skills": "Skills",
-      "skillsDescription": "Here’s a look at the technologies I’m skilled in (or almost)!"
+      "skillsDescription": "An overview of the technologies I master to bring your projects to life."
     }
   },
   "version": "version",
   "toggleTheme": "Toggle theme",
   "aboutRoute": "About",
-  "workRoute": "Work",
+  "workRoute": "Projects",
   "contactRoute": "Contact",
   "aboutNav": {
-    "bio": "Bio",
+    "bio": "Biography",
     "experience": "Experience",
     "education": "Education",
     "skills": "Skills"
   },
-
   "heroSection": {
     "contact": "Contact me",
     "viewOnGitHub": "View on GitHub",
     "downloadCV": "Download CV",
-    "viewAllExperiences": "View more on Linkedin",
-    "connectWithMe": "Connect with Me"
+    "viewAllExperiences": "View more on LinkedIn",
+    "connectWithMe": "Connect with me"
   },
   "status": {
-    "activity": "Activity",
-    "LiveStatus": "Live Status",
+    "activity": "Activities",
+    "LiveStatus": "Live status",
     "StarredRepositories": "Latest recently updated GitHub repositories",
-    "LastestJobs": "Latest course, job & project"
+    "LastestJobs": "Latest degree, job, and project"
   },
   "skills": "Skills",
-  "mySkills": "My Skills",
+  "mySkills": "My skills",
   "resetFilters": "Reset filters",
   "bestSkills": {
-    "title": "I love working on...",
-    "react": "React.js",
-    "reactDescription": "Experienced in building dynamic, responsive web applications using React and Next.js, with a focus on server-side rendering, static site generation, and efficient routing for enhanced performance.",
-    "tailwind": "Tailwind CSS",
-    "tailwindDescription": "Proficient in using Tailwind CSS to create custom, responsive designs quickly, ensuring clean and scalable UI development with utility-first styling.",
+    "title": "I love working with...",
+    "aws": "Amazon Web Services",
+    "awsDescription": "I love leveraging the power of AWS services. Every new service I master brings me closer to the AWS Certified Data Engineer – Associate certification.",
+    "jupyter": "Jupyter Notebook",
+    "jupyterDescription": "I use Jupyter to test ideas and iterate on problems, which is incredibly practical. I particularly enjoy the ability to explore data, experiment with code, and take notes within the same environment.",
     "python": "Python",
-    "pythonDescription": "Skilled in Python programming for various applications, from web development to data manipulation, with a focus on clean code and automation."
+    "pythonDescription": "Proficiency in Python programming for various applications, from web development to data analysis, with a focus on clean code and automation."
   },
   "bio": {
-    "profilePictureAlt": "Joe's picture",
+    "profilePictureAlt": "Photo of Joe",
     "yearsOld": "years old",
     "whoAmI": "Who am I?",
-    "introduction": "I am a versatile person, often described as \"multipotential\". I have explored different professional horizons, and today I can say that I thrive in various sectors.",
-    "skills": "My organizational skills and attention to detail are key assets. I take on projects of all sizes and contribute to their development to improve their quality and efficiency.",
-    "keyPlayer": "I strive to become a key player in every company I work for, not by imposing my ideas, but by relying on the quality of my work."
+    "introduction": "Full-stack developer transitioning to data engineering, I come from diverse backgrounds — graphic production, design, front-end, and back-end. What these experiences have in common: each time, I learned quickly, independently, and to the point of mastery.",
+    "skills": "I am rigorous and methodical. I learn in depth rather than on the surface; I structure before acting and deliver work I am proud to sign. These qualities don't depend on a stack — they precede all the tools I've learned and all those I will learn.",
+    "keyPlayer": "What motivates me is understanding how systems actually work — then making them clearer, more efficient, and more useful."
   },
   "work": {
     "title": "My projects",
     "releasedOn": "Released on",
-    "imageAlt": "view",
-    "itemAlt": "view",
+    "imageAlt": "screenshot",
+    "itemAlt": "logo",
     "privateRepo": "Private repository",
     "githubRepo": "GitHub repository"
   },
   "contact": {
     "getInTouch": "Get in touch",
     "openToOpportunities": "Open to new opportunities",
-    "connect": "Let’s connect and make it happen!",
+    "connect": "Let's connect and make it happen together!",
     "contactMe": "Contact me",
-    "invitation": "If you have a question, a job opportunity, or a project in mind, don’t hesitate to reach out. I’m eager to connect and discuss how we can work together.",
-    "firstName": "First Name",
-    "lastName": "Last Name",
+    "invitation": "If you have any questions, a job opportunity, or a project in mind, don't hesitate to reach out. I look forward to discussing how we can collaborate.",
+    "firstName": "First name",
+    "lastName": "Last name",
     "email": "Email",
     "company": "Company",
     "yourMessage": "Your message",
-    "messagePlaceholder": "Type your message here.",
+    "messagePlaceholder": "Write your message here.",
     "sendButton": "Send"
   },
   "statusCard": {
