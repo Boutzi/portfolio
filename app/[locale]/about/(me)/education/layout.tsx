@@ -7,7 +7,7 @@ interface AboutLayoutProps {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata(props: AboutLayoutProps) {
   const params = await props.params;
   const locale = params.locale;
 
