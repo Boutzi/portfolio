@@ -1,12 +1,12 @@
 {
   "Metadata": {
     "layout": {
-      "root": "Software Engineer à Bordeaux",
+      "root": "Data Engineer en France",
       "rootDescription": "Un créatif passionné de code, transformant des idées en expériences numériques captivantes.",
       "about": "À propos de moi",
       "aboutDescription": "Découvrez mon parcours, mes passions et ce qui m'inspire.",
       "work": "Projets",
-      "workDescription": "Explorez mes projets en développement web et logiciel.",
+      "workDescription": "Explorez mes projets en data, développement web et logiciel.",
       "contact": "Contactez-moi",
       "contactDescription": "Entrons en contact pour discuter de nouvelles opportunités.",
       "education": "Mon parcours académique",
@@ -46,10 +46,10 @@
   "resetFilters": "Réinitialiser les filtres",
   "bestSkills": {
     "title": "J'adore travailler avec...",
-    "react": "React.js",
-    "reactDescription": "Expérimenté dans la création d'applications web dynamiques et réactives avec React et Next.js, mettant l'accent sur le rendu côté serveur et la génération de sites statiques pour des performances optimales.",
-    "tailwind": "Tailwind CSS",
-    "tailwindDescription": "Compétent dans l'utilisation de Tailwind CSS pour concevoir rapidement des interfaces personnalisées et réactives, garantissant un développement UI propre et évolutif basé sur des utilitaires.",
+    "aws": "Amazon Web Services",
+    "awsDescription": "J'aime utiliser la puissance des services AWS. Chaque nouveau service que j'apprends à maîtriser me rapproche progressivement de la certification AWS Certified Data Engineer – Associate.",
+    "jupyter": "Jupyter Notebook",
+    "jupyterDescription": "J'utilise Jupyter pour tester des idées et itérer sur un problème, ce qui est vraiment très pratique. J'apprécie particulièrement la possibilité d'explorer des données, d'expérimenter du code et de prendre des notes dans un même environnement.",
     "python": "Python",
     "pythonDescription": "Maîtrise de la programmation Python pour diverses applications, du développement web à l'analyse de données, avec un accent sur un code propre et l'automatisation."
   },
@@ -57,9 +57,9 @@
     "profilePictureAlt": "Photo de Joe",
     "yearsOld": "ans",
     "whoAmI": "Qui suis-je ?",
-    "introduction": "Je suis une personne polyvalente, souvent décrite comme multipotentielle. J’ai exploré divers horizons professionnels et je m’épanouis dans plusieurs domaines.",
-    "skills": "Mes compétences organisationnelles et mon attention aux détails sont des atouts précieux. Je gère des projets de toutes tailles, contribuant à leur développement pour améliorer leur qualité et leur efficacité.",
-    "keyPlayer": "Je m'efforce d'être un acteur clé au sein de chaque entreprise pour laquelle je travaille, en mettant l'accent sur la qualité de mon travail plutôt que sur l'imposition de mes idées."
+    "introduction": "Développeur full-stack en transition vers la data engineering, je viens d'horizons variés — production graphique, design, front-end, back-end. Ce que ces expériences ont en commun : à chaque fois, j'ai appris vite, seul, et jusqu'à maîtriser.",
+    "skills": "Je suis rigoureux, méthodique. J'apprends en profondeur plutôt qu'en surface, je structure avant d'agir, et je livre un travail que je n'ai pas honte de signer. Ces qualités ne dépendent pas d'un stack — elles précèdent tous les outils que j'ai appris, et tous ceux que j'apprendrai.",
+    "keyPlayer": "Ce qui me motive, c'est de comprendre comment les systèmes fonctionnent réellement — puis de les rendre plus lisibles, plus efficaces, plus utiles."
   },
   "work": {
     "title": "Mes projets",

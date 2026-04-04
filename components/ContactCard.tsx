@@ -28,14 +28,13 @@ export const CONTACT: ContactProps[] = [
     image: "/linkedin-profile.jpg",
     mediumImage: "/linkedin.jpg",
     name: "Linkedin",
-    description: 107,
+    description: 139,
     url: "https://www.linkedin.com/in/joseph-girardi/",
   },
 ];
 
 export const ContactCard = (props: ContactProps) => {
-  const [githubUserData, setGithubUserData] =
-    useState<GithubUserResponse | null>(null);
+  const [githubUserData, setGithubUserData] = useState<GithubUserResponse | null>(null);
   const t = useTranslations();
 
   useEffect(() => {
@@ -51,15 +50,10 @@ export const ContactCard = (props: ContactProps) => {
     getUserData();
   }, []);
 
-  const linkUrl =
-    props.name === "GitHub" ? githubUserData?.html_url || "#" : props.url;
+  const linkUrl = props.name === "GitHub" ? githubUserData?.html_url || "#" : props.url;
 
   return (
-    <Link
-      href={linkUrl}
-      target="_blank"
-      className="w-full hover:bg-accent/20 rounded-xl"
-    >
+    <Link href={linkUrl} target="_blank" className="w-full hover:bg-accent/20 rounded-xl">
       <Card className="p-2 bg-accent/10 flex items-center gap-3 flex-grow group">
         <div className="relative group">
           <Image

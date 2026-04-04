@@ -1,11 +1,8 @@
 import { Form } from "@/components/Form";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function Contact({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export default async function Contact(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
   unstable_setRequestLocale(locale);
 
   return (

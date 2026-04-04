@@ -25,15 +25,6 @@
       "@/components/*": ["components/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "app/[locale]/about/(me)/education",
-    "jest.config.mjs",
-    "jest.setup.ts",
-    "jest.config.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/[locale]/about/(me)/education"],
   "exclude": ["node_modules"]
 }

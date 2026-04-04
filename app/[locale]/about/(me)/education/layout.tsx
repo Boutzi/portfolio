@@ -4,13 +4,13 @@ import { ReactNode } from "react";
 
 interface AboutLayoutProps {
   children: ReactNode;
+  params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+  const locale = params.locale;
+
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
@@ -19,16 +19,10 @@ export async function generateMetadata({
   };
 }
 
-interface AboutLayoutParams {
-  params: {
-    locale: string;
-  };
-}
+export default async function AboutLayout(props: AboutLayoutProps) {
+  const params = await props.params;
+  const locale = params.locale;
 
-export default function AboutLayout({
-  children,
-  params: { locale },
-}: AboutLayoutProps & AboutLayoutParams) {
   unstable_setRequestLocale(locale);
-  return children;
+  return props.children;
 }
