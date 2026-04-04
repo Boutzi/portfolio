@@ -2,11 +2,8 @@ import { Section } from "@/components/Section";
 import { WorkContainer } from "@/components/WorkContainer";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function Work({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export default async function Work(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
   unstable_setRequestLocale(locale);
   return (
     <Section>
