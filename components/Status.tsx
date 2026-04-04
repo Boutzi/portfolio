@@ -29,11 +29,7 @@ export const Status = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchDataFromBucket(
-          locale,
-          "education",
-          "education"
-        );
+        const data = await fetchDataFromBucket(locale, "education", "education");
         setEducation(data[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -45,11 +41,7 @@ export const Status = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchDataFromBucket(
-          locale,
-          "experience",
-          "experience"
-        );
+        const data = await fetchDataFromBucket(locale, "experience", "experience");
         setExperience(data[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -83,23 +75,16 @@ export const Status = () => {
     <Section className="flex flex-col gap-4">
       <ScrollAnimation animated={true} animationType="fade">
         <div className="flex flex-col gap-4 items-start">
-          <Badge
-            variant="outline"
-            className="rounded-full text-primary border-primary"
-          >
+          <Badge variant="outline" className="rounded-full text-primary border-primary">
             {t("status.activity")}
           </Badge>
-          <h2 className="font-caption font-extralight text-5xl max-sm:text-3xl">
-            {t("status.LiveStatus")}
-          </h2>
+          <h2 className="font-caption font-extralight text-5xl max-sm:text-3xl">{t("status.LiveStatus")}</h2>
         </div>
         <div className="flex max-lg:flex-col items-start justify-between gap-4">
           <div className="flex-[3] w-full">
             {/* <ScrollAnimation animated={true} animationType="slide-x"> */}
             <Card className="w-full p-4 flex flex-col gap-2">
-              <p className="text-sm text-muted-foreground">
-                {t("status.StarredRepositories")}
-              </p>
+              <p className="text-sm text-muted-foreground">{t("status.StarredRepositories")}</p>
               <div className="flex flex-col gap-3">
                 {repos?.map((repo: SideProjectProps, index) =>
                   repo.name === "arkaans-copilot" ? (
@@ -110,7 +95,7 @@ export const Status = () => {
                       html_url={repo.html_url}
                       language={"JavaScript"}
                     />
-                  ) : repo.name === "oc-integrateur-web-p12" ? (
+                  ) : repo.name === "portfolio" ? (
                     <SideProject
                       key={index}
                       name={repo.name}
@@ -145,9 +130,7 @@ export const Status = () => {
           <div className="flex-[2] w-full h-full flex flex-col gap-4">
             {/* <ScrollAnimation animated={true} animationType="-slide-x"> */}
             <Card className="flex-1 p-4">
-              <p className="text-sm text-muted-foreground">
-                {t("status.LastestJobs")}
-              </p>
+              <p className="text-sm text-muted-foreground">{t("status.LastestJobs")}</p>
               <div className="flex flex-col gap-4 py-2">
                 <Work
                   title={education?.course}
@@ -172,16 +155,12 @@ export const Status = () => {
                 />
               </div>
               <Link
-                href={
-                  "https://www.linkedin.com/in/joseph-girardi/details/experience/"
-                }
+                href={"https://www.linkedin.com/in/joseph-girardi/details/experience/"}
                 target="_blank"
                 className="flex items-center -m-4 mt-1 p-2 bg-accent/20 hover:bg-accent/50 text-foreground rounded-t-none rounded-lg border-t"
               >
                 <div className="m-auto flex gap-2 text-md items-center">
-                  <span className="">
-                    {t("heroSection.viewAllExperiences")}
-                  </span>
+                  <span className="">{t("heroSection.viewAllExperiences")}</span>
                   <ArrowUpRight className="" size={18} />
                 </div>
               </Link>
@@ -189,9 +168,7 @@ export const Status = () => {
             {/* </ScrollAnimation> */}
             {/* <ScrollAnimation animated={true} animationType="-slide-y"> */}
             <Card className="flex-1 p-4">
-              <p className="text-sm text-muted-foreground">
-                {t("heroSection.connectWithMe")}
-              </p>
+              <p className="text-sm text-muted-foreground">{t("heroSection.connectWithMe")}</p>
               <div className="flex gap-4 pt-2 max-lg:flex-col">
                 {CONTACT.map((contact, index) => (
                   <ContactCard key={index} {...contact} />
