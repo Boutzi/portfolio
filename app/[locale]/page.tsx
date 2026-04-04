@@ -1,11 +1,9 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import HomeClient from "./HomeClient";
 
-export default function Home({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export default async function Home(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
+
   unstable_setRequestLocale(locale);
 
   return <HomeClient />;

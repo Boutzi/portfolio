@@ -18,10 +18,7 @@ import { UserProvider } from "@/context/UserContext";
 import { ColorProvider } from "@/context/ColorContext";
 import { LoaderProvider } from "@/context/LoaderContext";
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
+// Les polices restent inchangées
 const AnekTelugu = Anek_Telugu({
   subsets: ["latin"],
   variable: "--font-caption",
@@ -31,7 +28,6 @@ const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
-  style: "normal",
 });
 
 const geistMono = localFont({
@@ -40,11 +36,13 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// 1. Mise à jour de generateMetadata
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params; // On attend params
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
@@ -56,35 +54,28 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+// 2. Mise à jour du RootLayout
+export default async function RootLayout(props: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
+
   unstable_setRequestLocale(locale);
   const messages = await getMessages();
+
   return (
     <StatusProvider>
-      <html lang={locale} className="h-full">
+      <html lang={locale} className="h-full" suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${AnekTelugu.variable} font-sans h-full antialiased bg-gradient-to-r from-backgradient from-20% via-backgradientvia to-80% to-backgradient`}
         >
           <GoogleTagManager />
           <NextIntlClientProvider messages={messages}>
             <UserProvider>
-              <ThemeProvider
-                attribute="class"
-                defaultTheme="dark"
-                enableSystem
-                disableTransitionOnChange
-              >
+              <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
                 <ColorProvider>
                   <GlobalStatus />
                   <Header />
                   <LoaderProvider>
-                    {children}
+                    {props.children}
                     <Footer />
                   </LoaderProvider>
                 </ColorProvider>
