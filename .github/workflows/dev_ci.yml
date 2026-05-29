@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Check ESLint version
+        run: npx eslint --version
+
       - name: ESLint
         run: npm run lint
 
