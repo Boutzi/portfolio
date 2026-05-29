@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
 
@@ -6,7 +7,7 @@ interface AboutLayoutProps {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale;
   const t = await getTranslations({ locale, namespace: "Metadata" });
