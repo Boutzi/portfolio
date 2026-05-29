@@ -11,7 +11,7 @@ import GoogleTagManager from "@/components/GoogleTagManager";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { StatusProvider } from "@/context/StatusContext";
 import { UserProvider } from "@/context/UserContext";
@@ -58,7 +58,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 export default async function RootLayout(props: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await props.params;
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
