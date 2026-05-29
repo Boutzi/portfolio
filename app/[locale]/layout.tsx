@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { Anek_Telugu } from "next/font/google";
+import type { Metadata } from "next";
 import "../globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -40,9 +41,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-// 1. Mise à jour de generateMetadata
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
-  const { locale } = await props.params; // On attend params
+export async function generateMetadata(props: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = props.params; // On attend params
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
