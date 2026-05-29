@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
 
 interface AboutLayoutProps {
@@ -17,6 +17,6 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 }
 export default async function AboutLayout(props: AboutLayoutProps) {
   const { locale } = await props.params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   return props.children;
 }

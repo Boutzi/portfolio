@@ -33,7 +33,7 @@ jobs:
         run: npm run lint
 
       - name: Depencies audit
-        run: npm audit --audit-level=moderate
+        run: npm audit --audit-level=high
 
       # - name: Run Unit Tests
       #   run: npx jest --coverage  # (commenté) Exécute les tests unitaires avec Jest et génère un rapport de couverture
