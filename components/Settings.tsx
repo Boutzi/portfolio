@@ -3,14 +3,9 @@ import * as React from "react";
 import { Check, LucideSettings } from "lucide-react";
 
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
+import { useTheme } from "@teispace/next-themes";
 import { useColor } from "@/context/ColorContext";
 
 export function Settings() {
@@ -35,7 +30,7 @@ export function Settings() {
       "blue-dark",
       "green-dark",
       "orange-dark",
-      "pink-dark"
+      "pink-dark",
     );
     document.documentElement.classList.add(color);
   }, [color, theme]);
@@ -43,18 +38,12 @@ export function Settings() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          size="icon"
-          className="bg-transparent border-none hover:bg-accent/30 shadow-none"
-        >
+        <Button size="icon" className="bg-transparent border-none hover:bg-accent/30 shadow-none">
           <LucideSettings className="h-[1.2rem] w-[1.2rem] text-foreground" />
           <span className="sr-only">{t("toggleTheme")}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        className="grid grid-cols-3 gap-2 p-2 text-black"
-      >
+      <DropdownMenuContent align="end" className="grid grid-cols-3 gap-2 p-2 text-black">
         <DropdownMenuItem
           onClick={() => {
             if (theme === "dark") {
@@ -65,8 +54,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-gray-100 hover:outline-foreground outline-2"
         >
-          {(color === "gray" && <Check />) ||
-            (color === "gray-dark" && <Check />)}
+          {(color === "gray" && <Check />) || (color === "gray-dark" && <Check />)}
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -79,8 +67,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-violet-700 hover:outline-foreground outline-2"
         >
-          {(color === "violet" && <Check />) ||
-            (color === "violet-dark" && <Check />)}
+          {(color === "violet" && <Check />) || (color === "violet-dark" && <Check />)}
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -93,8 +80,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-blue-600 hover:outline-foreground outline-2"
         >
-          {(color === "blue" && <Check />) ||
-            (color === "blue-dark" && <Check />)}
+          {(color === "blue" && <Check />) || (color === "blue-dark" && <Check />)}
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -107,8 +93,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-green-600 hover:outline-foreground outline-2"
         >
-          {(color === "green" && <Check />) ||
-            (color === "green-dark" && <Check />)}
+          {(color === "green" && <Check />) || (color === "green-dark" && <Check />)}
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -121,8 +106,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-orange-700 hover:outline-foreground outline-2"
         >
-          {(color === "orange" && <Check />) ||
-            (color === "orange-dark" && <Check />)}
+          {(color === "orange" && <Check />) || (color === "orange-dark" && <Check />)}
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -135,8 +119,7 @@ export function Settings() {
           }}
           className="size-8 cursor-pointer aspect-square bg-pink-700 hover:outline-foreground outline-2"
         >
-          {(color === "pink" && <Check />) ||
-            (color === "pink-dark" && <Check />)}
+          {(color === "pink" && <Check />) || (color === "pink-dark" && <Check />)}
         </DropdownMenuItem>
 
         {/* <div className="col-span-3 text-white bg-primary px-2 rounded">

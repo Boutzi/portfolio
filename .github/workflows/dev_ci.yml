@@ -27,10 +27,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Check ESLint version
-        run: npx eslint --version
+        run: npm install
 
       - name: ESLint
         run: npm run lint
