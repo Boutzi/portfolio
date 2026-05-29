@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { AboutNav } from "@/components/AboutNav";
 import { Section } from "@/components/Section";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 interface AboutLayoutProps {
   children: ReactNode;
@@ -25,7 +25,7 @@ export default async function AboutLayout(props: AboutLayoutProps) {
   const params = await props.params;
   const locale = params.locale;
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   return (
     <Section className="flex min-h-[calc(100vh_-_theme(spacing.44))] gap-4 md:gap-8 py-8">
       <div className="grid w-full items-start md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr] max-xl:flex max-xl:flex-col">

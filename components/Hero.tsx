@@ -54,9 +54,7 @@ function Hero() {
                   <br />
                   <span className="">{hero?.titleMain}</span>
                   <br />
-                  <span className="text-white text-6xl max-md:text-4xl">
-                    {hero?.titleOutro}
-                  </span>
+                  <span className="text-white text-6xl max-md:text-4xl">{hero?.titleOutro}</span>
                 </h1>
                 <h2 className="font-caption font-extralight text-xl max-sm:text-xl text-white">
                   {hero?.subFirst}
@@ -68,12 +66,7 @@ function Hero() {
                 </div>
                 <div className="flex gap-4 max-lg:m-auto max-sm:flex-col max-sm:items-center">
                   <div className="flex gap-4 max-sm:items-center">
-                    <CTA
-                      label={t("heroSection.contact")}
-                      url="/contact"
-                      classes="text-black"
-                      target=""
-                    />
+                    <CTA label={t("heroSection.contact")} url="/contact" classes="text-black" target="" />
                     <CTA
                       label={t("heroSection.viewOnGitHub")}
                       url={`${user?.githubUrl}`}

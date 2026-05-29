@@ -12,8 +12,7 @@ const calculateAge = (birthDate: string): number => {
   let age = today.getFullYear() - birth.getFullYear();
   const hasBirthdayPassed =
     today.getMonth() > birth.getMonth() ||
-    (today.getMonth() === birth.getMonth() &&
-      today.getDate() >= birth.getDate());
+    (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
 
   if (!hasBirthdayPassed) {
     age--;
@@ -35,7 +34,7 @@ export const Bio = () => {
     <section className="flex flex-col gap-8">
       <div className="rounded-lg overflow-hidden max-md:hidden mx-auto relative group w-full h-52">
         <Image
-          src="https://oc-integrateur-web-p12.s3.eu-west-3.amazonaws.com/banners/profile.jpg"
+          src={`${process.env.NEXT_PUBLIC_S3_BUCKET_URL}/banners/profile.jpg`}
           alt="content"
           className="w-full h-auto object-cover object-center rounded-lg"
           fill
@@ -62,15 +61,11 @@ export const Bio = () => {
                   {age} {t("bio.yearsOld")}
                 </span>
                 <div className="w-12 h-1 bg-primary rounded mt-4 mb-4"></div>
-                <p className="text-base text-accent-foreground/60">
-                  {user?.mainRole}
-                </p>
+                <p className="text-base text-accent-foreground/60">{user?.mainRole}</p>
               </div>
             </div>
             <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-accent sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-              <h2 className="font-caption text-2xl font-bold leading-relaxed max-md:text-lg">
-                {t("bio.whoAmI")}
-              </h2>
+              <h2 className="font-caption text-2xl font-bold leading-relaxed max-md:text-lg">{t("bio.whoAmI")}</h2>
               <p className="leading-relaxed text-lg mb-4">
                 {t("bio.introduction")}
                 <br />

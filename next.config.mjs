@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "oc-integrateur-web-p12.s3.eu-west-3.amazonaws.com",
+        hostname: "joe-portfolio-data.s3.eu-west-3.amazonaws.com",
       },
       {
         protocol: "https",
