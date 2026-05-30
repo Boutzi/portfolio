@@ -1,4 +1,4 @@
-name: Merge dev into main with version bump
+name: Merge dev --> main (version bump)
 
 on:
   pull_request:
