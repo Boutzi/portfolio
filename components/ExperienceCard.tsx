@@ -1,13 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { Calendar, MapPin, ScrollText } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import Image from "next/image";
 
