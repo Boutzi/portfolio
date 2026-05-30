@@ -35,20 +35,13 @@ jobs:
       - name: Depencies audit
         run: npm audit --audit-level=high
 
-      # - name: Run Unit Tests
-      #   run: npx jest --coverage  # (commenté) Exécute les tests unitaires avec Jest et génère un rapport de couverture
+      - name: Run Unit Tests
+        run: npx jest --coverage
 
       - name: Build application
         run: npm run build # Compile l'application
         env:
           NEXT_PUBLIC_GITHUB_BEARER_TOKEN: ${{ secrets.NEXT_PUBLIC_GITHUB_BEARER_TOKEN }}
-          NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
-          NEXT_PUBLIC_AUTHDOMAIN: ${{ secrets.NEXT_PUBLIC_AUTHDOMAIN }}
-          NEXT_PUBLIC_PROJECTID: ${{ secrets.NEXT_PUBLIC_PROJECTID }}
-          NEXT_PUBLIC_STORAGEBUCKET: ${{ secrets.NEXT_PUBLIC_STORAGEBUCKET }}
-          NEXT_PUBLIC_MESSAGINGSENDERID: ${{ secrets.NEXT_PUBLIC_MESSAGINGSENDERID }}
-          NEXT_PUBLIC_APPID: ${{ secrets.NEXT_PUBLIC_APPID }}
-          NEXT_PUBLIC_MEASUREMENTID: ${{ secrets.NEXT_PUBLIC_MEASUREMENTID }}
           NEXT_PUBLIC_S3_BUCKET_URL: ${{ secrets.NEXT_PUBLIC_S3_BUCKET_URL }}
           NEXT_PUBLIC_S3_CV_URL: ${{ secrets.NEXT_PUBLIC_S3_CV_URL }}
           NEXT_PUBLIC_GMAIL_USER: ${{ secrets.NEXT_PUBLIC_GMAIL_USER }}
