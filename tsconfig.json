@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     "app/[locale]/about/(me)/education",
     ".next/dev/types/**/*.ts",
-    "jest.config.cjs"
+    "jest.config.mjs"
   ],
   "exclude": ["node_modules"]
 }
