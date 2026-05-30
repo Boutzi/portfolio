@@ -8,7 +8,7 @@ import { JapanIcon } from "./icons/JapanIcon";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 type Language = "en" | "fr" | "it" | "kr" | "jp";
 

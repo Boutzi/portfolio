@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+import type { ReactNode } from "react";
+
 interface SkillCardProps {
   name: string;
-  image: JSX.Element;
+  image: ReactNode;
   level?: number;
   description?: string;
   category?: string;

@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { NextResponse } from 'next/server';
-import fs from 'fs/promises'; 
-import path from 'path';
+import { NextResponse } from "next/server";
+import fs from "fs/promises";
+import path from "path";
 
 export async function GET() {
   const filePath = path.join(process.cwd(), "package.json");
 
   try {
     const data = await fs.readFile(filePath, "utf8");
-    const jsonData = JSON.parse(data); 
+    const jsonData = JSON.parse(data);
     const version = jsonData.version;
 
     if (!version) {

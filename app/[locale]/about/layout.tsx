@@ -2,12 +2,13 @@ import { ReactNode } from "react";
 import { AboutNav } from "@/components/AboutNav";
 import { Section } from "@/components/Section";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
 
 interface AboutLayoutProps {
   children: ReactNode;
   params: Promise<{ locale: string }>;
 }
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const params = await props.params;
   const locale = params.locale;
   const t = await getTranslations({ locale, namespace: "Metadata" });

@@ -13,7 +13,7 @@ import Loading from "@/app/[locale]/about/(me)/skills/loading";
 
 interface Skill {
   name: string;
-  icon: JSX.Element | ReactNode;
+  icon: ReactNode | ReactNode;
   // proficiency: number;
   categories: string[];
   description: string;
@@ -42,7 +42,7 @@ export default function SkillsContainer() {
 
   const toggleCategory = (category: string) => {
     setSelectedCategories((prev) =>
-      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]
+      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category],
     );
   };
 
