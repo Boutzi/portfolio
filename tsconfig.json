@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es2015",
     "downlevelIteration": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,12 +21,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/components/*": [
-        "components/*"
-      ]
+      "@/*": ["./*"],
+      "@/components/*": ["components/*"]
     }
   },
   "include": [
@@ -39,9 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/[locale]/about/(me)/education",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "jest.config.mjs"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
