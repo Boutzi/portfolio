@@ -28,7 +28,7 @@ export const CONTACT: ContactProps[] = [
     image: "/linkedin-profile.jpg",
     mediumImage: "/linkedin.jpg",
     name: "Linkedin",
-    description: 150,
+    description: 149,
     url: "https://www.linkedin.com/in/joseph-girardi/",
   },
 ];
