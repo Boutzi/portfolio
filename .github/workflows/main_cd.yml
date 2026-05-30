@@ -1,38 +1,31 @@
-name: Merge dev --> main (version bump)
+name: Production CD (Continuous Deployment)
 
 on:
   pull_request:
     branches: ["main"]
+    types: [closed]
 
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  build:
+  version-bump:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Set up Git config
         run: |
           git config --local user.name "boutzi"
           git config --local user.email "joe@arkaans.com"
-
-      - name: Checkout dev branch
-        run: |
-          git checkout dev
-          git pull origin dev
 
       - name: Increment version (package.json)
         id: increment_version
@@ -40,11 +33,7 @@ jobs:
           CURRENT_VERSION=$(jq -r '.version' package.json)
           IFS='.' read -r major minor patch <<< "$CURRENT_VERSION"
 
-          echo "Version actuelle: $CURRENT_VERSION"
-
           PR_TITLE="${{ github.event.pull_request.title }}"
-
-          echo "Pull Request Title: $PR_TITLE"
 
           if [[ "$PR_TITLE" == *"major"* ]]; then
               major=$((major + 1))
@@ -56,18 +45,25 @@ jobs:
           elif [[ "$PR_TITLE" == *"fix"* ]]; then
               patch=$((patch + 1))
           else
-              echo "Aucun incrément de version spécifié. Aucune modification."
+              echo "No version keyword found. Skipping bump."
               exit 0
           fi
 
           NEW_VERSION="$major.$minor.$patch"
-          echo "Nouvelle version: $NEW_VERSION"
-
-          jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp.$$.json && mv tmp.$$.json package.json
-
           echo "new_version=$NEW_VERSION" >> $GITHUB_ENV
 
-      - name: Commit and push version bump to dev
+          jq --arg v "$NEW_VERSION" '.version = $v' package.json > tmp.$$.json && mv tmp.$$.json package.json
+
+      - name: Commit and push version bump to main
         run: |
           git add package.json
-          git commit -m "Bump version to ${{ env.new_version }}" || echo
+          git diff --staged --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "chore: bump version to ${{ env.new_version }}"
+          git push origin main
+
+      - name: Sync dev with main
+        run: |
+          git checkout dev
+          git pull origin dev
+          git merge main --no-edit
+          git push origin dev
