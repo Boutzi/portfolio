@@ -2,7 +2,7 @@
 
 > A personal portfolio built during my web developer training — and kept evolving ever since.
 
-**[joe.arkaans.com](https://joe.arkaans.com)**
+Rendez-vous sur : **[joe.arkaans.com](https://joe.arkaans.com)**
 
 ---
 
